@@ -52,6 +52,6 @@ public class Client implements Serializable {
         this.comptes = comptes;
     }
 
-    public Client() {
+    public Client(String mahjoub, String email, String cc) {
     }
 }

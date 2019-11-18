@@ -8,11 +8,11 @@ import java.util.Collection;
 import java.util.Date;
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "TYP_CPTE",discriminatorType = DiscriminatorType.STRING,length = 2)
+@DiscriminatorColumn(name = "TYPE_CPTE",discriminatorType = DiscriminatorType.STRING,length = 2)
 public abstract class Compte implements Serializable {
     @Id
     @GeneratedValue
-    private String numCompt;
+    private String codeCompte;
     @Temporal(TemporalType.TIMESTAMP)
 
     private Date dateOper;
@@ -25,12 +25,12 @@ public abstract class Compte implements Serializable {
     private Collection<Operation> operations;
 
 
-    public String getNumCompt() {
-        return numCompt;
+    public String getCodeCompte() {
+        return codeCompte;
     }
 
-    public void setNumCompt(String numCompt) {
-        this.numCompt = numCompt;
+    public void setCodeCompte(String codeCompte) {
+        this.codeCompte = codeCompte;
     }
 
     public Date getDateOper() {
@@ -65,11 +65,12 @@ public abstract class Compte implements Serializable {
         this.operations = operations;
     }
 
-    public Compte(Date dateOper, double solde, Client client, Collection < Operation > operations) {
+    public Compte(String codeCompte,Date dateOper, double solde, Client client, Collection < Operation > operations) {
         this.dateOper = dateOper;
         this.solde = solde;
         this.client = client;
         this.operations = operations;
+        this.codeCompte=codeCompte;
     }
 
     public Compte() {

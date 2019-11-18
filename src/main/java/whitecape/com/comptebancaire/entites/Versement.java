@@ -6,11 +6,10 @@ import java.util.Date;
 @Entity
 @DiscriminatorValue("CV")
 public class Versement extends Operation {
-
     public Versement(Date dateOper, Double montant, Compte compte) {
         super(dateOper, montant, compte);
     }
 
-    public Versement() {
+    public Versement(Date dateOper, int i, String cc) {
     }
 }

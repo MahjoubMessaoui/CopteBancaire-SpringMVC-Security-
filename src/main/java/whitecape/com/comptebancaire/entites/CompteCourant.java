@@ -20,10 +20,12 @@ public class CompteCourant extends Compte{
         this.decouvert = decouvert;
     }
 
-    public CompteCourant(Date dateOper, double solde, Client client, Collection < Operation > operations, double decouvert) {
-        super(dateOper, solde, client, operations);
+    public CompteCourant(String codeCompte, Date dateOper, double solde, Client client, Collection < Operation > operations, double decouvert) {
+        super(codeCompte, dateOper, solde, client, operations);
         this.decouvert = decouvert;
     }
+
+
 
     public CompteCourant() {
 

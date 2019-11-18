@@ -20,9 +20,8 @@ public class CompteEparagne extends Compte {
         this.taux = taux;
     }
 
-    public CompteEparagne(Date dateOper, double solde, Client client, Collection < Operation > operations, double taux) {
-        super(dateOper, solde, client, operations);
-        this.taux = taux;
+    public CompteEparagne(String codeCompte, Date dateOper, double solde, Client client, Collection < Operation > operations) {
+        super(codeCompte, dateOper, solde, client, operations);
     }
 
     public CompteEparagne() {
